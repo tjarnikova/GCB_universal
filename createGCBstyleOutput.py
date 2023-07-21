@@ -1,7 +1,7 @@
 ### script for producing global carbon budget-style output for any model version, 2023
 ### usage:
-### python createGCBstyleOutput.py {inputNumber} {modelversion} {yrFrom} {yrTo}
-### python createGCBstyleOutput.py -1 TOM12_TJ_1ASA 1959 2023
+### python createGCBstyleOutput.py {inputNumber} {modelversion} {yrFrom} {yrTo} {eraPressure}
+### python createGCBstyleOutput.py -1 TOM12_TJ_1ASA 1959 2023 True
 #### see /gpfs/data/greenocean/GCB/GCB_universal/inputNumberReference.txt to see which 
 #######
 #base directory where results go, change if necessary:
@@ -9,6 +9,8 @@ resultsbd = '/gpfs/data/greenocean/GCB/GCB_universal/GCBstyleOutput/'
 #directory where model results are read from 
 basedir = '/gpfs/data/greenocean/software/runs/' 
 ### updated by Tereza Jarnikova, based heavily on Dave Willis's /gpfs/data/greenocean/GCB/GCB_RECCAPcreateGCB_RECCAP.py
+#eraPressure = False # are we using era or not (for fgco2 calculations)
+
 
 import sys
 import os
@@ -31,14 +33,15 @@ OutputNumber = int(sys.argv[1])
 modelName = (sys.argv[2])
 yrFrom = int(sys.argv[3])
 yrTo = int(sys.argv[4])
+eraPressure = bool(sys.argv[5])
 
 tt = time.time()
 value = datetime.datetime.fromtimestamp(tt)
 timestamp = (value.strftime('%Y%m%d'))
 
-print(f'Calculating variable number {OutputNumber} for {modelName}, years {yrFrom}-{yrTo}, timestamp = {timestamp}')
+print(f'Calculating variable number {OutputNumber} for {modelName}, years {yrFrom}-{yrTo}, timestamp = {timestamp}, era forcing = {eraPressure}')
 print(f'model is read from {basedir}{modelName}')
-eraPressure = False # are we using era or not
+
 #### inputs, etc
 resultsdir = f'{resultsbd}{modelName}/'
 try:
@@ -48,7 +51,7 @@ except:
     print('results directory already exists')
 #put runs in a list for looping
 runs = [modelName]
-horse = False #flag for debugging, keep True if not debugging
+horse = True #flag for debugging, keep True if not debugging
 
 
 # ========= TO GENERATE OUTPUTS FOR GCB OR RECCAP ==========
@@ -261,7 +264,7 @@ if OutputNumber == -1:
     for r in range(0,len(runs)):
 
         # create outputfile
-        #outputFile = "PlankTOM_Simulation_"+str(sim[r])+"_integrated_timelines.nc"
+
         outputFile = f'{resultsdir}integrated_timelines_PlankTOM_1_gr_{yrFrom}-{yrTo}_v{timestamp}.nc'
         print(f'making file: {outputFile}')
         if horse:
@@ -493,7 +496,7 @@ if OutputNumber > -1:
         for r in range(0,len(runs)):
 
             # create outputfile
-            outputFile = "PlankTOM_Sim_"+str(sim[r])+"_"+str(v['name'])+".nc"
+
             outputFile = f'{resultsdir}{parm}_PlankTOM_1_gr_{yrFrom}-{yrTo}_v{timestamp}.nc'
             print(f'making {outputFile}')
             if horse:
@@ -572,8 +575,11 @@ if OutputNumber > -1:
 
                         # add forcing data and preprocess if needed
                         if OutputNumber == 23:
-                            file_force = glob.glob(forcedir+"/ncep_kelvin_"+str(y)+".nc")
-                            file_force = glob.glob(f'{forcedir}/bulk_{y}_9_era5_daily.nc') #era5
+                            if eraPressure:
+                                file_force = glob.glob(f'{forcedir}/bulk_{y}_9_era5_daily.nc') #era5
+                            else:
+                                file_force = glob.glob(forcedir+"/ncep_kelvin_"+str(y)+".nc")
+                            
                             print("forcing data for conversion: ",y, file_force)
                             file_phys = glob.glob(basedir+runs[r]+"/ORCA2_1m_"+str(y)+"0101*grid_T*.nc")
 
