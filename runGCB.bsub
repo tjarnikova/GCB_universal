@@ -1,0 +1,28 @@
+#!/bin/sh
+
+#SBATCH --mail-type=ALL
+#SBATCH -p compute-64-512
+#SBATCH -t 96:00:00
+#SBATCH --job-name=makeGCB
+#SBATCH -o p-%J.out
+#SBATCH -e p-%J.out
+#SBATCH --mem 8G 
+
+module purge
+module add python/anaconda/2019.10/3.7
+
+#run script from login node with sbatch < runGCB.bsub
+
+#Where are these var ids labeled? (in order of appearance in 2023 GCB protocol pdf):
+# https://docs.google.com/spreadsheets/d/186mFWSIaPWu7X_RldiGPrPzIuqyNupUR7XwoCBkMaIk/edit?usp=sharing
+# or: /gpfs/data/greenocean/GCB/GCB_universal/inputNumberReference.txt
+
+### usage:
+### python createGCBstyleOutput.py {inputNumber} {modelversion} {yrFrom} {yrTo}
+
+
+python createGCBstyleOutput.py -1 TOM12_TJ_CNA1 1959 2015 #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+python createGCBstyleOutput.py 0 TOM12_TJ_CNA1 1959 2015 #varID 7: fgco2
+python createGCBstyleOutput.py 23 TOM12_TJ_CNA1 1959 2015 #varID 8: sfco2
+
+##

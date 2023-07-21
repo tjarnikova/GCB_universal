@@ -1,0 +1,56 @@
+## usage of inputNumbers:
+python createGCBstyleOutput.py {inputNumber} {modelversion} {yrFrom} {yrTo} 
+eg:
+python createGCBstyleOutput.py -1 TOM12_TJ_1ASA 1959 2023 20230721
+
+# for GCB: tier 1: -1, Anc_v3, 0,23,2,10,11,8,9,24,
+#          tier 2: 23, 3,4,7,22,21,12,13,14,15,16,17,18,19,20,    25
+#          tier 2 (3D): 26,27,28,29,30,34,31,32,33
+
+# dictionary
+
+##### lookup table for inputnumbers:
+# inputNumber: -1 corresponds to GCB varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+# inputNumber: 0 corresponds to GCB varID 7: fgco2
+# inputNumber: 23 corresponds to GCB varID 8: sfco2
+# inputNumber: 2 corresponds to GCB varID 9: fice
+# inputNumber: 10 corresponds to GCB varID: 10 dissicos
+# inputNumber: 11 corresponds to GCB varID: 11 talkos
+# inputNumber: 8 corresponds to GCB varID 12 tos
+# inputNumber: 9 corresponds to GCB varID 13 sos
+# inputNumber: 24 corresponds to GCB varID 24 intdic
+# #tier 2 full reccap
+# inputNumber: 25 corresponds to GCB varID 28: fgo2
+# inputNumber: 3 corresponds to GCB varID 29: intpp
+# inputNumber: 4 corresponds to GCB varID 30: epc100
+# inputNumber: 5 corresponds to GCB varID 31: intpp
+# #32: epc100type / epc1000type
+# inputNumber: 7 corresponds to GCB varID 33: epcalc100
+# # Kw
+# # pco2atm
+# # alpha
+# inputNumber: 22 corresponds to GCB varID 37  no3os
+# inputNumber: 21  corresponds to GCB varID 38  po4os
+# inputNumber: 12 corresponds to GCB varID 39  sios
+# inputNumber: 13 corresponds to GCB varID 40  dfeos
+# inputNumber: 14 corresponds to GCB varID 41  o2os
+# inputNumber: 15 corresponds to GCB varID 42  intphyc
+# inputNumber: 16 corresponds to GCB varID 43  intphynd
+# inputNumber: 17 corresponds to GCB varID 44  intdiac
+# inputNumber: 18 corresponds to GCB varID 45  intzooc
+# inputNumber: 19 corresponds to GCB varID 46  chlos
+# inputNumber: 20 corresponds to GCB varID 47  mld
+# # zeu
+# # zos
+
+# # -- 3d --
+# inputNumber: 26 corresponds to GCB varID 50  dissic  
+# inputNumber: 27 corresponds to GCB varID 51  talk    
+# inputNumber: 28 corresponds to GCB varID 52  thetao  
+# inputNumber: 29 corresponds to GCB varID 53  so  
+# inputNumber: 30 corresponds to GCB varID 54  epc 
+# inputNumber: 34 corresponds to GCB varID 55  no3 
+# inputNumber: 31 corresponds to GCB varID 56  po4 
+# inputNumber: 32 corresponds to GCB varID 57  si  
+# inputNumber: 33 corresponds to GCB varID 58  o2  
+
