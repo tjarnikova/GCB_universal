@@ -20,33 +20,33 @@ module add python/anaconda/2019.10/3.7
 ### usage:
 ### python createGCBstyleOutput.py {inputNumber} {modelversion} {yrFrom} {yrTo} {eraPressure}
 
-# python createGCBstyleOutput.py -1 TOM12_TJ_CNA1 1990 2019 False #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
-# python createGCBstyleOutput.py 0 TOM12_TJ_CNA1 1990 2019 False #varID 7: fgco2
-# python createGCBstyleOutput.py 23 TOM12_TJ_CNA1 1990 2019 False #varID 8: sfco2
+python createGCBstyleOutput.py -1 TOM12_TJ_CNA1 1990 2020 False #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+python createGCBstyleOutput.py 0 TOM12_TJ_CNA1 1990 2020 False #varID 7: fgco2
+python createGCBstyleOutput.py 23 TOM12_TJ_CNA1 1990 2020 False #varID 8: sfco2
 
-python createGCBstyleOutput.py -1 TOM12_TJ_GEA0 1990 2020 True #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
-python createGCBstyleOutput.py 0 TOM12_TJ_GEA0 1990 2020 True #varID 7: fgco2
-python createGCBstyleOutput.py 23 TOM12_TJ_GEA0 1990 2020 True #varID 8: sfco2
+# python createGCBstyleOutput.py -1 TOM12_TJ_GEA0 1990 2020 True #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+# python createGCBstyleOutput.py 0 TOM12_TJ_GEA0 1990 2020 True #varID 7: fgco2
+# python createGCBstyleOutput.py 23 TOM12_TJ_GEA0 1990 2020 True #varID 8: sfco2
 
-python createGCBstyleOutput.py -1 TOM12_TJ_GEA1 1990 2020 True #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
-python createGCBstyleOutput.py 0 TOM12_TJ_GEA1 1990 2020 True #varID 7: fgco2
-python createGCBstyleOutput.py 23 TOM12_TJ_GEA1 1990 2020 True #varID 8: sfco2
+# python createGCBstyleOutput.py -1 TOM12_TJ_GEA1 1990 2020 True #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+# python createGCBstyleOutput.py 0 TOM12_TJ_GEA1 1990 2020 True #varID 7: fgco2
+# python createGCBstyleOutput.py 23 TOM12_TJ_GEA1 1990 2020 True #varID 8: sfco2
 
-python createGCBstyleOutput.py -1 RIV12_PT_NC01 1990 2020 False #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
-python createGCBstyleOutput.py 0 RIV12_PT_NC01 1990 2020 False #varID 7: fgco2
-python createGCBstyleOutput.py 23 RIV12_PT_NC01 1990 2020 False #varID 8: sfco2
+# python createGCBstyleOutput.py -1 RIV12_PT_NC01 1990 2020 False #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+# python createGCBstyleOutput.py 0 RIV12_PT_NC01 1990 2020 False #varID 7: fgco2
+# python createGCBstyleOutput.py 23 RIV12_PT_NC01 1990 2020 False #varID 8: sfco2
 
-python createGCBstyleOutput.py -1 RIV12_PT_NC02 1990 2020 False #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
-python createGCBstyleOutput.py 0 RIV12_PT_NC02 1990 2020 False #varID 7: fgco2
-python createGCBstyleOutput.py 23 RIV12_PT_NC02 1990 2020 False #varID 8: sfco2
+# python createGCBstyleOutput.py -1 RIV12_PT_NC02 1990 2020 False #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+# python createGCBstyleOutput.py 0 RIV12_PT_NC02 1990 2020 False #varID 7: fgco2
+# python createGCBstyleOutput.py 23 RIV12_PT_NC02 1990 2020 False #varID 8: sfco2
 
-python createGCBstyleOutput.py -1 RIV12_PT_ER24 1990 2020 True #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
-python createGCBstyleOutput.py 0 RIV12_PT_ER24 1990 2020 True #varID 7: fgco2
-python createGCBstyleOutput.py 23 RIV12_PT_ER24 1990 2020 True #varID 8: sfco2
+# python createGCBstyleOutput.py -1 RIV12_PT_ER24 1990 2020 True #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+# python createGCBstyleOutput.py 0 RIV12_PT_ER24 1990 2020 True #varID 7: fgco2
+# python createGCBstyleOutput.py 23 RIV12_PT_ER24 1990 2020 True #varID 8: sfco2
 
-python createGCBstyleOutput.py -1 RIV12_PT_ER23 1990 2020 True #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
-python createGCBstyleOutput.py 0 RIV12_PT_ER23 1990 2020 True #varID 7: fgco2
-python createGCBstyleOutput.py 23 RIV12_PT_ER23 1990 2020 True #varID 8: sfco2
+# python createGCBstyleOutput.py -1 RIV12_PT_ER23 1990 2020 True #varID 1-6: fgco2_glob, fgco2_reg, intDIC_1994_glob, intDIC_1994_reg, intDIC_2007_glob, intDIC_2007_reg
+# python createGCBstyleOutput.py 0 RIV12_PT_ER23 1990 2020 True #varID 7: fgco2
+# python createGCBstyleOutput.py 23 RIV12_PT_ER23 1990 2020 True #varID 8: sfco2
 
 
 ##

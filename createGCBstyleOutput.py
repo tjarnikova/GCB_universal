@@ -33,7 +33,9 @@ OutputNumber = int(sys.argv[1])
 modelName = (sys.argv[2])
 yrFrom = int(sys.argv[3])
 yrTo = int(sys.argv[4])
-eraPressure = bool(sys.argv[5])
+#eraPressure = bool(sys.argv[5])
+#need to use eval, thanks Nico M. for the catch
+eraPressure = eval(sys.argv[5])
 
 tt = time.time()
 value = datetime.datetime.fromtimestamp(tt)
